@@ -87,6 +87,27 @@ void main() {
   print(
       "All keys that have length 4 : ${contactsMap.keys.where((element) => element.toString().length == 4)}");
 
+  //Q.9: Create Map variable name world then inside it create countries Map, Key will be the name country & country value will have another map having capitalCity, currency and language to it. by using any country key print all the value of Capital & Currency.
+  Map<String, Map<String, String>> world = {
+    "Pakistan": {
+      "capitalCity": "Islamabad",
+      "currency": "PKR",
+      "language": "urdu"
+    },
+    "Iran": {
+      "capitalCity": "Tehran",
+      "currency": "Tuman",
+      "language": "Persion"
+    },
+    "SaudiArabia": {
+      "capitalCity": "Riyadh",
+      "currency": "Riyal",
+      "language": "Arabic"
+    }
+  };
+  print(
+      "Iran Capital City is ${world["Iran"]?["capitalCity"]} and Currency is ${world["Iran"]?["currency"]}");
+
 // Q.10:
 // Map<String, double> expenses = {
 //   'sun': 3000.0,
