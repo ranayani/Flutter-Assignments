@@ -29,8 +29,8 @@ void main() {
 
   List users = [user1, user2, user3];
 
-  login("codewithowais@gmail.com", "654321", users); // login successfull
-  login("sabeel@gmail.com", "1234", users); // login failed
+  loginUser("codewithowais@gmail.com", "654321", users); // login successfull
+  loginUser("sabeel@gmail.com", "1234", users); // login failed
 
   // Q6:  Write a program in Dart to calculate power of a certain numbers using function only.
   calculatePower(10, 2);
@@ -78,7 +78,7 @@ Map<String, dynamic> signup(String username, String email, String password,
   };
 }
 
-login(String email, String password, List users) {
+loginUser(String email, String password, List users) {
   bool isAuthenticated = false;
   String username = "";
   for (var user in users) {
