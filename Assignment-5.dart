@@ -7,11 +7,11 @@ void main() {
   //   'tue': 3234.0,
   // };
   // Check if "fri" exist in expanses; if exist change it's value to 5000.0 otherwise add 'fri' to expenses and set its value to 5000.0 then print expenses.
-  expensesPrint({
+  updateExpenses({
     'sun': 3000.0,
     'mon': 3000.0,
     'tue': 3234.0,
-  });
+  }, 'fri', 5000.0);
   // Q2: Write a program in Dart that find the area of a circle using function.
   areaOfCircle(20);
   // Q3: Write a program in a dart that implements the Pythagorean theorem using function.
@@ -38,19 +38,18 @@ void main() {
   calculateVowelsAndConsonant('number of vowels and consonant in a String');
 }
 
-expensesPrint(expenses) {
-  Map<String, double> newExpense = {'fri': 5000.0};
-  if (expenses.containsKey("fri")) {
-    expenses["fri"] = 5000.0;
+updateExpenses(expenses, String day, double amount) {
+  if (expenses.containsKey(day)) {
+    expenses[day] = amount;
   } else {
-    expenses.addEntries(newExpense.entries);
+    expenses[day] = amount;
   }
-  print("Expenses $expenses");
+  print("Expenses updated: $expenses");
 }
 
-areaOfCircle(num r) {
+areaOfCircle(double r) {
   num pie = 3.14159;
-  print("Area of cricle for given radious is ${pie * (r * r)}");
+  print("Area of cricle with radious $r is ${pie * (r * r)}");
 }
 
 pythagoreanTheorem(num a, num b) {
